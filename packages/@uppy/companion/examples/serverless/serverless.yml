@@ -3,29 +3,30 @@ service: uppyloader
 provider:
   name: aws
   runtime: nodejs8.10
-
+  region: ap-south-1  
   environment:
     # NOTE: Make sure you set this to the url of your service endpoint
 
-    DOMAIN: <YOUR_SERVICE_ENDPOINT>
+    DOMAIN:   https://companion.onesquad.io
 
     # NOTE: Make sure you set the API Keys for your chosen provider
 
-    AWS_S3_BUCKET: <YOUR_AWS_S3_BUCKET_NAME>
-    AWS_S3_REGION: <YOUR_AWS_S3_BUCKET_REGION>
+    AWS_S3_BUCKET: onesquad-user-files
+    AWS_S3_REGION: ap-south-1
 
-    SESSION_SECRET: <YOUR_SESSION_SECRET>
+    SESSION_SECRET: lbhfads21123
 
-    UPPY_SECRET: <YOUR_UPPY_SECRET>
+    UPPY_SECRET: qlwbh36732
 
     # INSTAGRAM_KEY: <YOUR_INSTAGRAM_KEY>
     # INSTAGRAM_SECRET: <YOUR_INSTAGRAM_SECRET>
 
-    # GOOGLE_KEY: <YOUR_GOOGLE_KEY>
-    # GOOGLE_SECRET: <YOUR_GOOGLE_SECRET>
+    GOOGLE_KEY: abcde
+    GOOGLE_SECRET: fghjik
 
-    # DROPBOX_KEY: <YOUR_DROPBOX_KEY>
-    # DROPBOX_SECRET: <YOUR_DROPBOX_SECRET>
+    DROPBOX_KEY: lmnopqr
+    DROPBOX_SECRET: stuvwxyz
+
 
 functions:
   companion:
@@ -37,3 +38,7 @@ functions:
 
 plugins:
   - serverless-offline
+
+custom:
+  serverless-offline:
+    port: 4000

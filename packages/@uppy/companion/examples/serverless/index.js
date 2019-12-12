@@ -4,14 +4,14 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const session = require('express-session')
-const compression = require('compression')
+// const compression = require('compression')
 const awsServerlessExpress = require('aws-serverless-express')
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
 const companion = require('@uppy/companion')
 
 const app = express()
 
-app.use(compression())
+// app.use(compression())
 app.use(cors())
 app.use(session({
   secret: process.env.SESSION_SECRET,
